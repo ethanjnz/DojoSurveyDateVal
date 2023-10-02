@@ -26,8 +26,17 @@ public class HomeController : Controller
     [HttpPost("process")]
     public IActionResult Process(User NewUser)
     {
-        FakeUserDb = NewUser;
-        return RedirectToAction("Details");
+        if (ModelState.IsValid)
+        {
+            FakeUserDb = NewUser;
+            return RedirectToAction("Details");
+
+        }
+        else
+        {
+            return View("Index");
+        }
+
     }
 
     [HttpGet("details")]
