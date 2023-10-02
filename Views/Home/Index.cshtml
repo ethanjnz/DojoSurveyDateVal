@@ -48,6 +48,11 @@ select = form-select
                     placeholder="Leave a comment here"></textarea>
                 <span class="text-warning" asp-validation-for="Comment"></span>
             </div>
+            <div class="mb-3">
+                <label asp-for="Birthday"></label>
+                <input asp-for="Birthday" class="form-control">
+                <span class="text-warning" asp-validation-for="Birthday"></span>
+            </div>
             <div class="d-flex justify-content-end">
                 <input value="submit" type="submit" class="btn btn-primary">
             </div>
